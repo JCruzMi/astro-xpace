@@ -1,0 +1,67 @@
+---
+interface Props {
+  img: string
+  description: string
+  title: string
+  number: string
+  success: boolean
+  potcast: string
+}
+
+const {img, description, title, number, success, potcast} = Astro.props
+---
+
+<main class="flex md:flex-row flex-col gap-4">
+<article
+  class="max-w-[60ch] relative block cursor-default overflow-hidden rounded-lg border border-blue-500 p-4 sm:p-6 lg:p-8"
+>
+  <span
+    class="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-gray-600 via-blue-700 to-blue-500"
+  ></span>
+
+  <div class="flex justify-between gap-4">
+    <div>
+      <h3 class="text-3xl flex flex-col font-bold text-white">
+        {title}
+        <div>
+          <span class:list={[
+            "text-xs font-semibold mr-2 px-2.5 py-0.5 rounded",
+            {
+                "bg-green-400 text-green-900": success,
+                "bg-red-400 text-red-900" : !success
+            }
+        ]}>{success ? "Éxitoso" : "Fallido"}</span>
+        </div>
+      </h3>      
+    </div>
+
+    <div class="block shrink-0">
+      <img
+            class="w-20 h-auto"
+            transition:name="hero"            
+            transition:animate="slide"
+            src={img}
+            alt={title}
+            />
+    </div>
+  </div>
+
+  <div class="mt-4">
+    <p class="max-w-[60ch] text-sm text-gray-200">
+      {description}
+    </p>
+  </div>
+
+
+</article>
+<article class="w-auto relative block cursor-default overflow-hidden rounded-lg border border-blue-500 p-4 sm:p-6 lg:p-8">
+  
+    <a href={potcast} target="__blank" class="flex-row bg-slate-700/20 justify-center  text-white cursor-pointer hover:bg-slate-700 focus:ring-4 focus:outline-none focus:ring-[#1da1f2]/50 font-medium rounded-lg px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#1da1f2]/55 mr-2 mb-2 hover:shadow-lg transition-all duration-200 ease-in-out hover:scale-110 scale-90 gap-x-2 opacity-70 hover:opacity-100">
+      Ver potcast
+      <svg width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M6 18h6a3 3 0 0 0 3 -3v-10l-4 4m8 0l-4 -4" />
+      </svg>  
+    </a>
+  </article>
+</main>

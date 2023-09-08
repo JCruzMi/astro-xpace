@@ -1,0 +1,18 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import CardDescription from '../../components/CardDescription.astro'
+import { getLaunchBy } from '../../services/api'
+
+export const prerender = false
+
+const { id } = Astro.params
+
+let launch
+if(id){
+    launch = await getLaunchBy({id})
+}
+---
+
+<Layout title={`Lanzamiento ${id}`}>    
+    <CardDescription potcast={launch?.links?.webcast} success={launch?.success} img={launch?.links?.patch?.small}  description={launch?.details}  title={launch?.name}  number={launch?.flight_number} />
+</Layout>

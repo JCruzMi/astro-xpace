@@ -1,10 +1,10 @@
 ---
 interface Props {
-    id: string    
-    img: string
-    success: boolean
-    details: string | null
-    flightNumber: string
+    id?: string    
+    img?: string
+    success?: boolean
+    details?: string | null
+    flightNumber?: number
 }
 
 const { success, flightNumber, img, id, details } = Astro.props
@@ -14,7 +14,7 @@ const successText = success ? "Éxitoso" : "Fallido"
 
 <a
     href={`/launch/${id}`}
-    class="rounded-lg shadow-md bg-gray-800 border-gray-700 hover:scale-105 hover:bg-gray-700 hover:border-gray-500 transition flex flex-col"
+    class="max-w-[60ch] relative cursor-default overflow-hidden border border-blue-500 rounded-lg shadow-md hover:scale-105 hover:bg-gray-700 hover:border-blue-300 transition flex flex-col"
 >
     <picture class="flex justify-center p-4">
         <img transition:animate="slide" transition:name="hero" src={img} alt={`Imagen de la misión ${id}`} class="rounded-lg mb-5" />

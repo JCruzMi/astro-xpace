@@ -7,14 +7,14 @@ const {launches} = await getLatestLaunches()
 ---
 
 <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-	{
+	{ launches &&
 		launches.map((launch) => (
 			<CardLaunch 
 				id={launch.id}
-				img={launch.links.patch.small}
+				img={launch?.links?.patch?.small}
 				success={launch.success}
 				details={launch.details}
-				flightNumber={launch.flight_number} />
+				flightNumber={launch?.flight_number} />
 			)
 		)
 	}

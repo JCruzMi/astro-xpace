@@ -13,7 +13,7 @@ const { title, description, image, date, tags, displayButton, textButton } =
   Astro.props;
 ---
 
-<div class="p-2.5 my-2 md:my-4 shadow-up w-full 2xl:mx-auto rounded-lg">
+<div class="p-2.5 my-2 md:my-4 shadow-up w-full rounded-lg">
   <div class="flex flex-col items-center justify-center">
     <div class="atropos py-4 px-6 2xl:px-10 w-full m-auto">
       <div class="atropos-scale">
@@ -22,7 +22,7 @@ const { title, description, image, date, tags, displayButton, textButton } =
             class="atropos-inner aspect-video bg-cover bg-[url('https://images6.alphacoders.com/129/1290982.png')] transition-all duration-700 relative p-2 rounded-md shadow-2xl bg-teal-600 md:backdrop-blur-sm flex flex-col"
           >
             <div
-              class="atropos-inner transition-all duration-700 relative py-4 px-2 md:px-8 2xl:px-15 rounded-md flex flex-col"
+              class="atropos-inner transition-all duration-700 relative py-2 px-2 md:px-8 2xl:px-15 rounded-md flex flex-col"
             >
               <div class="flex justify-between flex-row items-center">
                 <h4
@@ -36,7 +36,7 @@ const { title, description, image, date, tags, displayButton, textButton } =
                 </h4>
                 <div class="flex items-center justify-center">
                   <h4
-                    class="transition-all duration-700 top-0 right-0 flex font-mono text-2xl font-bold opacity-90"
+                    class="transition-all duration-700 top-0 right-0 flex font-mono text-xl md:text-2xl font-bold opacity-90"
                   >
                     <div
                       class="flex text-sm items-baseline font-black uppercase text-white/80"
@@ -47,10 +47,10 @@ const { title, description, image, date, tags, displayButton, textButton } =
                 </div>
               </div>
               <h1
-                class="mx-auto mb-0 text-[3rem] font-black bg-clip-text text-transparent bg-gradient-to-r text-white xl:pt-6 sm:text-[6rem] lg:text-[7rem] text-center sm:mt-10"
+                class="mx-auto mb-0 text-[2rem] font-black bg-clip-text text-transparent bg-gradient-to-r text-white xl:pt-6 sm:text-[6rem] lg:text-[7rem] text-center sm:mt-10"
               >
                 <span
-                  class="text-transparent [-webkit-text-stroke-width:2px] sm:[-webkit-text-stroke-width:4px] [-webkit-text-stroke-color:white]"
+                  class="text-transparent [-webkit-text-stroke-width:1px] sm:[-webkit-text-stroke-width:4px] [-webkit-text-stroke-color:white]"
                 >
                   {title.split(" ")[0]}
                 </span>
@@ -63,7 +63,7 @@ const { title, description, image, date, tags, displayButton, textButton } =
                     class="flex items-center justify-center pt-2"
                     data-atropos-offset="5"
                   >
-                    <h2 class="inline-block w-fit px-6 py-1 text-xs min-w-fit font-thin text-center text-white rounded-xl md:w-2/3 md:text-lg bg-black/90">
+                    <h2 class="inline-block w-fit px-6 py-1 text-xs min-w-fit font-thin text-center text-white rounded md:rounded-xl md:w-2/3 md:text-lg bg-black/90">
                       {textButton}
                     </h2>
                   </div>

@@ -1,0 +1,40 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getGirls } from "../services/apiAnime";
+
+const { girls } = await getGirls();
+const girlsOne = await girls.slice(0, 15);
+const girlsTwo = await girls.slice(15, 30);
+---
+
+<Layout title="Aniem girls">
+  <div class="mx-auto px-4 py-16 lg:py-24 relative bg-gray-50">
+    <!-- <div class="flex flex-col flex-wrap gap-2"> -->
+    <div class="grid sm:grid-cols-2 gap-2">
+      <div class="flex flex-col gap-2">
+        {
+          girlsOne &&
+            girlsOne.map((girl) => (
+              <img
+                src={girl}
+                alt={girl}
+                class="rounded-xl max-w-md h-auto w-full"
+              />
+            ))
+        }
+      </div>
+      <div class="flex flex-col gap-2">
+        {
+          girlsTwo &&
+            girlsTwo.map((girl) => (
+              <img
+                src={girl}
+                alt={girl}
+                class="rounded-xl max-w-md h-auto w-full"
+              />
+            ))
+        }
+      </div>
+    </div>
+  </div>
+</Layout>

@@ -31,6 +31,9 @@ const successText = success ? "Exitoso" : "Fallido"
             Lanzamiento #{flightNumber}
         </h2>
         <p class="bg-4 font-light text-gray-400">
+            {
+                details ? null : "Sin detalles"
+            }
             {details && details?.length > 100 ? details.slice(0, 100) + "..." : details}
         </p>
     </header>

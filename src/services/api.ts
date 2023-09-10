@@ -12,7 +12,7 @@ export const getLatestLaunches = async () => {
         sort: {
           data_unix: "asc",
         },
-        limit: 12,
+        limit: 21,
       },
     }),
   });

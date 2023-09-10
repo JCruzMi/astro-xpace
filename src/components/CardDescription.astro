@@ -1,13 +1,13 @@
 ---
-import Counter from './Counter.vue';
-import HeaderButton from './header/HeaderButton.astro';
+import Counter from "./Counter.vue";
+import HeaderButton from "./header/HeaderButton.astro";
 interface Props {
-  img: string;
-  description: string;
-  title: string;
-  number: string;
-  success: boolean;
-  potcast: string;
+  img?: string;
+  description?: string | null;
+  title?: string;
+  number?: number;
+  success?: boolean;
+  potcast?: string;
 }
 
 const { img, description, title, number, success, potcast } = Astro.props;
@@ -24,7 +24,7 @@ const { img, description, title, number, success, potcast } = Astro.props;
     <div class="flex justify-between gap-4">
       <div>
         <h3 class="text-3xl flex flex-col font-bold text-white">
-          {title}
+          <span transition:name={`text-${title}`}>{title}</span>
           <div>
             <span
               class:list={[
@@ -39,15 +39,15 @@ const { img, description, title, number, success, potcast } = Astro.props;
         </h3>
       </div>
 
-      <div class="block shrink-0">
+      <picture class="block shrink-0">
         <img
           class="w-20 h-auto"
-          transition:name="hero"
-          transition:animate="slide"
+          transition:name={`img-${title}`}
           src={img}
-          alt={title}
+          alt={`${title}`}
+          id={`img-${title}`}
         />
-      </div>
+      </picture>
     </div>
 
     <div class="my-4">
@@ -77,11 +77,7 @@ const { img, description, title, number, success, potcast } = Astro.props;
     </a>
   </article>
   <Counter transition:persist client:visible>
-    <HeaderButton slot="increment">
-      Increment
-    </HeaderButton>
-    <HeaderButton slot="decrement">
-      Decrement
-    </HeaderButton>
+    <HeaderButton slot="increment">Increment</HeaderButton>
+    <HeaderButton slot="decrement">Decrement</HeaderButton>
   </Counter>
 </main>

@@ -1,23 +1,25 @@
 ---
-import CardLaunch from './CardLaunch.astro'
-import {getLatestLaunches} from '../services/api'
+import CardLaunch from "./CardLaunch.astro";
+import { getLatestLaunches } from "../services/api";
 
-const {launches} = await getLatestLaunches()
-
+const { launches } = await getLatestLaunches();
 ---
 
 <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-	{ launches &&
-		launches.map((launch) => (
-			<CardLaunch 
-				id={launch.id}
-				img={launch?.links?.patch?.small}
-				success={launch.success}
-				details={launch.details}
-				flightNumber={launch?.flight_number} />
-			)
-		)
-	}
-	<footer class="text-xs text-gray-500 max-w-sm">Vista estatica creada con Astro js </footer>
+  {
+    launches &&
+      launches.map((launch) => (
+        <CardLaunch
+          id={launch.id}
+          img={launch?.links?.patch?.small}
+          success={launch.success}
+          details={launch.details}
+          title={launch.name}
+          flightNumber={launch?.flight_number}
+        />
+      ))
+  }
+  <footer class="text-xs text-gray-500 max-w-sm">
+    Vista estatica creada con Astro js
+  </footer>
 </div>
-

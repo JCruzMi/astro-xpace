@@ -1,3 +1,18 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  date?: string;
+  tags: string[];
+  displayButton: boolean;
+  textButton: string;
+}
+
+const { title, description, image, date, tags, displayButton, textButton } =
+  Astro.props;
+---
+
 <div class="p-2.5 my-2 md:my-4 shadow-up w-full 2xl:mx-auto rounded-lg">
   <div class="flex flex-col items-center justify-center">
     <div class="atropos py-4 px-6 2xl:px-10 w-full m-auto">
@@ -16,7 +31,7 @@
                   <div
                     class="flex text-sm items-baseline font-black text-white/80"
                   >
-                    #Test
+                    {tags[0]}
                   </div>
                 </h4>
                 <div class="flex items-center justify-center">
@@ -26,7 +41,7 @@
                     <div
                       class="flex text-sm items-baseline font-black uppercase text-white/80"
                     >
-                      #001
+                      {tags[1]}
                     </div>
                   </h4>
                 </div>
@@ -37,24 +52,23 @@
                 <span
                   class="text-transparent [-webkit-text-stroke-width:2px] sm:[-webkit-text-stroke-width:4px] [-webkit-text-stroke-color:white]"
                 >
-                  Huan
+                  {title.split(" ")[0]}
                 </span>
-                <span class="drop-shadow-2xl">
-
-                </span>
-                 Murato
+                <span class="drop-shadow-2xl"> </span>
+                {title.split(" ")[1]}
               </h1>
-
-              <div
-                class="flex items-center justify-center pt-2"
-                data-atropos-offset="5"
-              >
-                <h2
-                  class="inline-block w-fit px-6 py-1 text-xs min-w-fit font-thin text-center text-white rounded-xl md:w-2/3 md:text-lg bg-black/90"
-                >
-                  Ver más
-                </h2>
-              </div>
+              {
+                displayButton ? (
+                  <div
+                    class="flex items-center justify-center pt-2"
+                    data-atropos-offset="5"
+                  >
+                    <h2 class="inline-block w-fit px-6 py-1 text-xs min-w-fit font-thin text-center text-white rounded-xl md:w-2/3 md:text-lg bg-black/90">
+                      {textButton}
+                    </h2>
+                  </div>
+                ) : null
+              }
             </div>
             <span
               class="atropos-highlight"

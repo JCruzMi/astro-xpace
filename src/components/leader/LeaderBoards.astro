@@ -1,0 +1,26 @@
+---
+import { users } from "../../static/users.ts";
+import AvatarReact from "./AvatarReact.jsx";
+---
+
+<>
+  <div class="py-4 px-4 flex flex-col gap-4">
+    <h1 class="text-2xl text-light-blue-dark font-bold text-center">
+      Leaderboard
+    </h1>
+    {
+      users
+        .sort((a, b) => parseInt(a.tag) - parseInt(b.tag))
+        .map((user, index) => (
+          <AvatarReact
+            name={user.name}
+            description={user.description}
+            image={user.image}
+            index={index + 1}
+          />
+        ))
+    }
+  </div>
+</>
+
+<style></style>

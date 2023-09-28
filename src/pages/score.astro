@@ -1,0 +1,15 @@
+---
+import Layout from "../layouts/Layout.astro";
+import UsersTable from "../components/leader/UsersTable.jsx";
+import LeaderBoards from "../components/leader/LeaderBoards.astro";
+export const prerender = false;
+---
+
+<Layout title="Xpace">
+  <main class="grid md:grid-cols-12 gap-2 w-full h-6">
+    <UsersTable client:load />
+    <section class="md:col-span-4 bg-light-secondary rounded-xl">
+      <LeaderBoards />
+    </section>
+  </main>
+</Layout>

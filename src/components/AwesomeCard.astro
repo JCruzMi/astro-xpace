@@ -13,13 +13,13 @@ const { title, description, image, date, tags, displayButton, textButton } =
   Astro.props;
 ---
 
-<div class="p-2.5 my-2 md:my-4 shadow-up w-full rounded-lg">
+<div class="shadow-up w-full rounded-lg" id={title}>
   <div class="flex flex-col items-center justify-center">
     <div class="atropos py-4 px-6 2xl:px-10 w-full m-auto">
       <div class="atropos-scale">
         <div class="atropos-rotate">
           <div
-            class="atropos-inner aspect-video bg-cover bg-[url('https://images6.alphacoders.com/129/1290982.png')] transition-all duration-700 relative p-2 rounded-md shadow-2xl bg-teal-600 md:backdrop-blur-sm flex flex-col"
+            class="atropos-inner aspect-video bg-cover transition-all duration-700 relative p-2 rounded-md shadow-2xl bg-teal-600 md:backdrop-blur-sm flex flex-col"
           >
             <div
               class="atropos-inner transition-all duration-700 relative py-2 px-2 md:px-8 2xl:px-15 rounded-md flex flex-col"
@@ -81,7 +81,7 @@ const { title, description, image, date, tags, displayButton, textButton } =
   </div>
 </div>
 
-<style>
+<style scoped>
   .atropos {
     position: relative;
     display: block;

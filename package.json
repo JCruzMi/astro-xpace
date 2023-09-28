@@ -10,12 +10,18 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/react": "^3.0.2",
     "@astrojs/tailwind": "^5.0.0",
     "@astrojs/vercel": "^4.0.4",
     "@astrojs/vue": "^3.0.0",
+    "@material-tailwind/react": "^2.1.2",
     "@nanostores/vue": "^0.10.0",
+    "@types/react": "^18.2.23",
+    "@types/react-dom": "^18.2.8",
     "astro": "^3.0.10",
     "nanostores": "^0.9.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "tailwindcss": "^3.3.3",
     "vue": "^3.3.4"
   }

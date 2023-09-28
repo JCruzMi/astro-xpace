@@ -19,7 +19,7 @@
     </div>
     <footer class="text-xs text-gray-500 max-w-sm">
       Usando vue 3 js con nanostores para guardar el estado del contador y no se
-      reinicie al cambiar de pagina 
+      reinicie al cambiar de pagina
     </footer>
   </div>
 </template>

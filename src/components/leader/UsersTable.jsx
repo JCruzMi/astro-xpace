@@ -22,12 +22,12 @@ export default function UsersTable() {
   }, [search]);
 
   return (
-    <section class="md:col-span-8 bg-cyan-400 rounded-xl py-4">
-      <header class="text-light-blue-dark flex sm:flex-row flex-col gap-2 justify-between px-4 items-center">
-        <h1 class="text-3xl font-bold">Compañeros</h1>
+    <section className="md:col-span-8 bg-cyan-400 rounded-xl py-4">
+      <header className="text-light-blue-dark flex sm:flex-row flex-col gap-2 justify-between px-4 items-center">
+        <h1 className="text-3xl font-bold">Compañeros</h1>
         <InputReact search={search} setSearch={setSearch} />
       </header>
-      <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 px-4 py-4">
+      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 px-4 py-4">
         {filter.map((user, index) => (
           <CardPerson
             name={user.name}

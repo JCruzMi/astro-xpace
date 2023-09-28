@@ -1,4 +1,4 @@
-import { Avatar, Typography } from "@material-tailwind/react";
+import { Avatar } from "@material-tailwind/react";
 
 export default function AvatarReact({ image, name, description, index }) {
   return index == 1 ? (

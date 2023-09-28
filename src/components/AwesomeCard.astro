@@ -19,10 +19,10 @@ const { title, description, image, date, tags, displayButton, textButton } =
       <div class="atropos-scale">
         <div class="atropos-rotate">
           <div
-            class="atropos-inner aspect-video bg-cover transition-all duration-700 relative p-2 rounded-md shadow-2xl bg-teal-600 md:backdrop-blur-sm flex flex-col"
+            class="atropos-inner aspect-video bg-cover bg-[url('https://images-ng.pixai.art/images/orig/1650a8bd-dc83-49c5-8ef6-427b91ee79e9')] transition-all duration-700 relative p-2 rounded-md shadow-2xl bg-teal-600 md:backdrop-blur-sm flex flex-col"
           >
             <div
-              class="atropos-inner transition-all duration-700 relative py-2 px-2 md:px-8 2xl:px-15 rounded-md flex flex-col"
+              class="atropos-inner transition-all duration-700 relative py-2 px-2 rounded-md flex flex-col"
             >
               <div class="flex justify-between flex-row items-center">
                 <h4
@@ -46,17 +46,19 @@ const { title, description, image, date, tags, displayButton, textButton } =
                   </h4>
                 </div>
               </div>
-              <h1
-                class="mx-auto mb-0 text-[2rem] font-black bg-clip-text text-transparent bg-gradient-to-r text-white xl:pt-6 sm:text-[6rem] lg:text-[7rem] text-center sm:mt-10"
-              >
-                <span
-                  class="text-transparent [-webkit-text-stroke-width:1px] sm:[-webkit-text-stroke-width:4px] [-webkit-text-stroke-color:white]"
+              <div class="flex h-full justify-end items-end pb-8">
+                <h1
+                  class="mx-auto mb-0 text-[2rem] font-black bg-clip-text text-transparent bg-gradient-to-r text-white xl:pt-6 sm:text-[6rem] lg:text-[7rem] text-center sm:mt-10"
                 >
-                  {title.split(" ")[0]}
-                </span>
-                <span class="drop-shadow-2xl"> </span>
-                {title.split(" ")[1]}
-              </h1>
+                  <span
+                    class="text-transparent drop-shadow-2xl [-webkit-text-stroke-width:1px] sm:[-webkit-text-stroke-width:4px] [-webkit-text-stroke-color:black]"
+                  >
+                    {title.split(" ")[0]}
+                  </span>
+                  <span class="drop-shadow-2xl"> </span>
+                  {title.split(" ")[1]}
+                </h1>
+              </div>
               {
                 displayButton ? (
                   <div

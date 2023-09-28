@@ -10,7 +10,7 @@ import AvatarReact from "./AvatarReact.jsx";
     </h1>
     {
       users
-        .sort((a, b) => parseInt(a.tag) - parseInt(b.tag))
+        .sort((a, b) => parseInt(b.description) - parseInt(a.description))
         .map((user, index) => (
           <AvatarReact
             name={user.name}

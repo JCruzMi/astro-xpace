@@ -1,8 +1,11 @@
 import React from "react";
 
-export default function CardPerson({ name, description, image, tag }) {
+export default function CardPerson({ name, description, image, tag, key }) {
   return (
-    <div class="shadow-up w-full rounded-lg min-h-[170px]">
+    <div
+      class="shadow-up w-full rounded-lg min-h-[170px] cursor-default"
+      key={key}
+    >
       <div class="flex flex-col items-center h-full justify-center">
         <div class="relative w-full rounded-2xl bg-white h-full flex flex-col">
           <div class="transition-all duration-700 relative py-0 px-2 rounded-md grid grid-cols-2 h-full">

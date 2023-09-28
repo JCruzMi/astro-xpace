@@ -22,7 +22,7 @@ export default function UsersTable() {
   }, [search]);
 
   return (
-    <section class="md:col-span-8 bg-light-primary rounded-xl py-4">
+    <section class="md:col-span-8 bg-cyan-400 rounded-xl py-4">
       <header class="text-light-blue-dark flex sm:flex-row flex-col gap-2 justify-between px-4 items-center">
         <h1 class="text-3xl font-bold">Compañeros</h1>
         <InputReact search={search} setSearch={setSearch} />
@@ -33,7 +33,8 @@ export default function UsersTable() {
             name={user.name}
             description={user.description}
             image={user.image}
-            tag={index + 1}
+            tag={user.tag}
+            key={index}
           />
         ))}
       </section>
